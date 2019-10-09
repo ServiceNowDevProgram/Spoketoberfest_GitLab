@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_gitlab.GitLabErrorHandler</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GitLabErrorHandler</name>
+        <script><![CDATA[var GitLabErrorHandler = Class.create();
+GitLabErrorHandler.prototype = {
+    
+	initialize: function(e) {
+		this.error = e;
+	},
+	
+	handleError_ListUserProjects: function(inputs, outputs) {
+		outputs.error_message = this.error;
+		return outputs;
+	},
+
+    type: 'GitLabErrorHandler'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>dg42xyz</sys_created_by>
+        <sys_created_on>2019-10-09 18:10:58</sys_created_on>
+        <sys_id>faa5fe8bdbd0841016cc9b81ca96195f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>GitLabErrorHandler</sys_name>
+        <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
+        <sys_update_name>sys_script_include_faa5fe8bdbd0841016cc9b81ca96195f</sys_update_name>
+        <sys_updated_by>dg42xyz</sys_updated_by>
+        <sys_updated_on>2019-10-09 18:52:24</sys_updated_on>
+    </sys_script_include>
+</record_update>

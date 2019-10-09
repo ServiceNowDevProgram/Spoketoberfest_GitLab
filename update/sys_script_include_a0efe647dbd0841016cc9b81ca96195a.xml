@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_gitlab.GitLabUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GitLabUtils</name>
+        <script><![CDATA[var GitLabUtils = Class.create();
+GitLabUtils.prototype = {
+	
+    initialize: function() { },
+	
+	postProcess_ListUserProjects: function(inputs, outputs) {
+		outputs.status = inputs.statusCode;
+		if (inputs.statusCode == '200') {
+			outputs.projects = inputs.responseBody;
+		} else {
+			outputs.error_message = JSON.parse(inputs.responseBody).message;
+		}
+		return outputs;
+	},
+
+    type: 'GitLabUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>dg42xyz</sys_created_by>
+        <sys_created_on>2019-10-09 17:58:13</sys_created_on>
+        <sys_id>a0efe647dbd0841016cc9b81ca96195a</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>GitLabUtils</sys_name>
+        <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
+        <sys_update_name>sys_script_include_a0efe647dbd0841016cc9b81ca96195a</sys_update_name>
+        <sys_updated_by>dg42xyz</sys_updated_by>
+        <sys_updated_on>2019-10-09 18:37:12</sys_updated_on>
+    </sys_script_include>
+</record_update>
