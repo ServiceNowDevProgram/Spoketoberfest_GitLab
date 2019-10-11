@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="ssh_url" label="SSH URL" language="en" table="var__m_sys_hub_step_ext_output_bbd2d92fdbd8c41016cc9b81ca9619eb">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>ssh_url</element>
+            <help/>
+            <hint/>
+            <label>SSH URL</label>
+            <language>en</language>
+            <name>var__m_sys_hub_step_ext_output_bbd2d92fdbd8c41016cc9b81ca9619eb</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>dg42xyz</sys_created_by>
+            <sys_created_on>2019-10-11 00:14:58</sys_created_on>
+            <sys_id>44e21d2fdbd8c41016cc9b81ca961930</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>SSH URL</sys_name>
+            <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_step_ext_output_bbd2d92fdbd8c41016cc9b81ca9619eb_ssh_url_en</sys_update_name>
+            <sys_updated_by>dg42xyz</sys_updated_by>
+            <sys_updated_on>2019-10-11 00:14:58</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

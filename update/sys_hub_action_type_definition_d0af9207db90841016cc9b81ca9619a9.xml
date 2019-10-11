@@ -13,7 +13,7 @@
         <ih_action>true</ih_action>
         <internal_name>list_user_projects</internal_name>
         <label_cache>[{"name":"{{action.user_id}}","label":"action➛User ID","type":"action","ref":""},{"name":"{{action.search}}","label":"action➛Search","type":"action","ref":""},{"name":"{{action.visibility}}","label":"action➛Visibility","type":"action","ref":""},{"name":"{{step[3b444e0a-d530-41f5-9f92-5e65e6a1f7f1].u_version}}","label":"step➛REST step➛Version","type":"step","ref":""},{"name":"{{step[3b444e0a-d530-41f5-9f92-5e65e6a1f7f1].error_message}}","label":"step➛REST step➛Error Message","type":"step","ref":""},{"name":"{{step[3b444e0a-d530-41f5-9f92-5e65e6a1f7f1].response_body}}","label":"step➛REST step➛Response Body","type":"step","ref":""},{"name":"{{step[3b444e0a-d530-41f5-9f92-5e65e6a1f7f1].status_code}}","label":"step➛REST step➛Status Code","type":"step","ref":""},{"name":"{{step[c603f1c8-473f-4394-a158-723577db5169].stat}}","label":"step➛Post Processing➛stat","type":"step","ref":""},{"name":"{{step[c603f1c8-473f-4394-a158-723577db5169].status}}","label":"step➛Post Processing➛Status","type":"step","ref":""},{"name":"{{step[c603f1c8-473f-4394-a158-723577db5169].error_message}}","label":"step➛Post Processing➛Error Message","type":"step","ref":""},{"name":"{{step[c603f1c8-473f-4394-a158-723577db5169].projects}}","label":"step➛Post Processing➛Projects","type":"step","ref":""}]</label_cache>
-        <latest_snapshot>fbf94b43db54841016cc9b81ca961979</latest_snapshot>
+        <latest_snapshot>37dec52bdbd8c41016cc9b81ca96197e</latest_snapshot>
         <master_snapshot>0c0a4b43db54841016cc9b81ca9619f2</master_snapshot>
         <name>List User Projects</name>
         <outputs/>
@@ -25,7 +25,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d0af9207db90841016cc9b81ca9619a9</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>43</sys_mod_count>
         <sys_name>List User Projects</sys_name>
         <sys_overrides/>
         <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
@@ -33,7 +33,7 @@
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_update_name>sys_hub_action_type_definition_d0af9207db90841016cc9b81ca9619a9</sys_update_name>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 19:38:30</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:57:31</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_definition>
@@ -501,10 +501,10 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 17:31:23</sys_created_on>
         <sys_id>56ece283dbd0841016cc9b81ca96196f</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 18:51:51</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:55:18</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=56ece283dbd0841016cc9b81ca96196f"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -529,14 +529,22 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 17:31:23</sys_created_on>
         <sys_id>5eece283dbd0841016cc9b81ca961984</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 18:51:51</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:55:18</sys_updated_on>
         <value>(function execute(inputs, outputs) {
   try {
-    outputs = new x_snc_gitlab.GitLabUtils().postProcess_ListUserProjects(inputs, outputs);
+    var successStatusCodes = ['200'];
+    var errorMessages = {
+      'User Not Found': 'User ID not found.'
+    };
+    var callbackFunction = function(inputs, outputs, errorMessages) {
+      outputs.projects = inputs.responseBody;
+      return outputs;
+    };
+    outputs = new x_snc_gitlab.GitLabUtils().postProcess(inputs, outputs, errorMessages, successStatusCodes, callbackFunction);
   } catch (e) {
-  	outputs = new x_snc_gitlab.GitLabErrorHandler(e).handleError_ListUserProjects(inputs, outputs);
+    outputs = new x_snc_gitlab.GitLabErrorHandler(e).handleError(inputs, outputs, errorMessages);
   }
 })(inputs, outputs);
 </value>
@@ -2008,10 +2016,10 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 17:31:23</sys_created_on>
         <sys_id>56ece283dbd0841016cc9b81ca96196f</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 18:51:51</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:55:18</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=56ece283dbd0841016cc9b81ca96196f"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -2036,14 +2044,22 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 17:31:23</sys_created_on>
         <sys_id>5eece283dbd0841016cc9b81ca961984</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 18:51:51</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:55:18</sys_updated_on>
         <value>(function execute(inputs, outputs) {
   try {
-    outputs = new x_snc_gitlab.GitLabUtils().postProcess_ListUserProjects(inputs, outputs);
+    var successStatusCodes = ['200'];
+    var errorMessages = {
+      'User Not Found': 'User ID not found.'
+    };
+    var callbackFunction = function(inputs, outputs, errorMessages) {
+      outputs.projects = inputs.responseBody;
+      return outputs;
+    };
+    outputs = new x_snc_gitlab.GitLabUtils().postProcess(inputs, outputs, errorMessages, successStatusCodes, callbackFunction);
   } catch (e) {
-  	outputs = new x_snc_gitlab.GitLabErrorHandler(e).handleError_ListUserProjects(inputs, outputs);
+    outputs = new x_snc_gitlab.GitLabErrorHandler(e).handleError(inputs, outputs, errorMessages);
   }
 })(inputs, outputs);
 </value>
@@ -2814,17 +2830,17 @@
     <sys_hub_action_plan action="INSERT_OR_UPDATE">
         <action_id display_value="List User Projects">d0af9207db90841016cc9b81ca9619a9</action_id>
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_hub_action_plan","id":"f40acb43db54841016cc9b81ca961978","name":"plan"}}</plan>
-        <snapshot>fbf94b43db54841016cc9b81ca961979</snapshot>
+        <snapshot>37dec52bdbd8c41016cc9b81ca96197e</snapshot>
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 19:38:32</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f40acb43db54841016cc9b81ca961978</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 19:38:32</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:57:33</sys_updated_on>
     </sys_hub_action_plan>
     <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
         <access>public</access>
@@ -2849,15 +2865,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0c0a4b43db54841016cc9b81ca9619f2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
-        <sys_policy/>
+        <sys_policy>read</sys_policy>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_update_name/>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 19:38:29</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:57:30</sys_updated_on>
         <system_level>false</system_level>
         <type/>
     </sys_hub_action_type_snapshot>
@@ -3311,10 +3327,10 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 19:38:29</sys_created_on>
         <sys_id>1c0a8b43db54841016cc9b81ca961922</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 19:38:30</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:57:30</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=1c0a8b43db54841016cc9b81ca961922"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -3325,14 +3341,22 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 19:38:30</sys_created_on>
         <sys_id>580a8b43db54841016cc9b81ca961954</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 19:38:30</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:57:31</sys_updated_on>
         <value>(function execute(inputs, outputs) {
   try {
-    outputs = new x_snc_gitlab.GitLabUtils().postProcess_ListUserProjects(inputs, outputs);
+    var successStatusCodes = ['200'];
+    var errorMessages = {
+      'User Not Found': 'User ID not found.'
+    };
+    var callbackFunction = function(inputs, outputs, errorMessages) {
+      outputs.projects = inputs.responseBody;
+      return outputs;
+    };
+    outputs = new x_snc_gitlab.GitLabUtils().postProcess(inputs, outputs, errorMessages, successStatusCodes, callbackFunction);
   } catch (e) {
-  	outputs = new x_snc_gitlab.GitLabErrorHandler(e).handleError_ListUserProjects(inputs, outputs);
+    outputs = new x_snc_gitlab.GitLabErrorHandler(e).handleError(inputs, outputs, errorMessages);
   }
 })(inputs, outputs);
 </value>
@@ -4806,10 +4830,10 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 19:38:29</sys_created_on>
         <sys_id>1c0a8b43db54841016cc9b81ca961922</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 19:38:30</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:57:30</sys_updated_on>
     </sys_hub_step_instance>
     <sys_variable_value action="delete_multiple" query="document_key=1c0a8b43db54841016cc9b81ca961922"/>
     <sys_variable_value action="INSERT_OR_UPDATE">
@@ -4820,14 +4844,22 @@
         <sys_created_by>dg42xyz</sys_created_by>
         <sys_created_on>2019-10-09 19:38:30</sys_created_on>
         <sys_id>580a8b43db54841016cc9b81ca961954</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_updated_by>dg42xyz</sys_updated_by>
-        <sys_updated_on>2019-10-09 19:38:30</sys_updated_on>
+        <sys_updated_on>2019-10-10 23:57:31</sys_updated_on>
         <value>(function execute(inputs, outputs) {
   try {
-    outputs = new x_snc_gitlab.GitLabUtils().postProcess_ListUserProjects(inputs, outputs);
+    var successStatusCodes = ['200'];
+    var errorMessages = {
+      'User Not Found': 'User ID not found.'
+    };
+    var callbackFunction = function(inputs, outputs, errorMessages) {
+      outputs.projects = inputs.responseBody;
+      return outputs;
+    };
+    outputs = new x_snc_gitlab.GitLabUtils().postProcess(inputs, outputs, errorMessages, successStatusCodes, callbackFunction);
   } catch (e) {
-  	outputs = new x_snc_gitlab.GitLabErrorHandler(e).handleError_ListUserProjects(inputs, outputs);
+    outputs = new x_snc_gitlab.GitLabErrorHandler(e).handleError(inputs, outputs, errorMessages);
   }
 })(inputs, outputs);
 </value>

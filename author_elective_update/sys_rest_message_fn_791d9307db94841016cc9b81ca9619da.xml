@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="DELETE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>Default GET</function_name>
+        <http_method>get</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>GitLab [ Default GET ]</qualified_name>
+        <rest_endpoint>https://gitlab.com/api/v4/</rest_endpoint>
+        <rest_message display_value="GitLab">5bdcdfc3db94841016cc9b81ca961953</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>dg42xyz</sys_created_by>
+        <sys_created_on>2019-10-09 21:01:53</sys_created_on>
+        <sys_id>791d9307db94841016cc9b81ca9619da</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Default GET</sys_name>
+        <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
+        <sys_update_name>sys_rest_message_fn_791d9307db94841016cc9b81ca9619da</sys_update_name>
+        <sys_updated_by>dg42xyz</sys_updated_by>
+        <sys_updated_on>2019-10-09 21:01:53</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</application>
+        <file_path/>
+        <instance_id>f90857ccdb7613804c1ff70fbf9619b9</instance_id>
+        <instance_name>dev61430</instance_name>
+        <name>sys_rest_message_fn_791d9307db94841016cc9b81ca9619da</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn"><sys_rest_message_fn action="INSERT_OR_UPDATE"><authentication_type>inherit_from_parent</authentication_type><basic_auth_password/><basic_auth_profile/><basic_auth_user/><content/><function_name>Default GET</function_name><http_method>get</http_method><lock>false</lock><oauth2_profile/><protocol_name/><qualified_name>GitLab [ Default GET ]</qualified_name><rest_endpoint>https://gitlab.com/api/v4/</rest_endpoint><rest_message display_value="GitLab">5bdcdfc3db94841016cc9b81ca961953</rest_message><sys_class_name>sys_rest_message_fn</sys_class_name><sys_created_by>dg42xyz</sys_created_by><sys_created_on>2019-10-09 21:01:53</sys_created_on><sys_id>791d9307db94841016cc9b81ca9619da</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Default GET</sys_name><sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package><sys_policy/><sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope><sys_update_name>sys_rest_message_fn_791d9307db94841016cc9b81ca9619da</sys_update_name><sys_updated_by>dg42xyz</sys_updated_by><sys_updated_on>2019-10-09 21:01:53</sys_updated_on><use_basic_auth>false</use_basic_auth><use_mid_server/><use_mutual_auth>false</use_mutual_auth></sys_rest_message_fn></record_update>]]></payload>
+        <payload_hash>-859670624</payload_hash>
+        <record_name>Default GET</record_name>
+        <reverted_from/>
+        <source>8330ac69db10001016cc9b81ca961967</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>dg42xyz</sys_created_by>
+        <sys_created_on>2019-10-09 21:01:53</sys_created_on>
+        <sys_id>fd1d9307db94841016cc9b81ca9619dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>16db25402570000001</sys_recorded_at>
+        <sys_updated_by>dg42xyz</sys_updated_by>
+        <sys_updated_on>2019-10-09 21:01:53</sys_updated_on>
+        <type>HTTP Method</type>
+        <update_guid>391d9307ab948410002a1593ee0326dc</update_guid>
+        <update_guid_history>391d9307ab948410002a1593ee0326dc:-859670624</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>dg42xyz</sys_created_by>
+        <sys_created_on>2019-10-09 21:05:16</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn">sys_rest_message_fn</sys_db_object>
+        <sys_id>290d84fef0f14f3c8e90dcf8e615dfc4</sys_id>
+        <sys_metadata>791d9307db94841016cc9b81ca9619da</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Default GET</sys_name>
+        <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
+        <sys_scope_delete display_value="">5843b41df7c14ea0a2b49352c930bd10</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_791d9307db94841016cc9b81ca9619da</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_791d9307db94841016cc9b81ca9619da">fd1d9307db94841016cc9b81ca9619dc</sys_update_version>
+        <sys_updated_by>dg42xyz</sys_updated_by>
+        <sys_updated_on>2019-10-09 21:05:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
