@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="description" label="Description" language="en" table="var__m_sys_hub_action_input_5eef496bdbd8c41016cc9b81ca96191c">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>description</element>
+            <help/>
+            <hint/>
+            <label>Description</label>
+            <language>en</language>
+            <name>var__m_sys_hub_action_input_5eef496bdbd8c41016cc9b81ca96191c</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>dg42xyz</sys_created_by>
+            <sys_created_on>2019-10-11 00:02:01</sys_created_on>
+            <sys_id>96ef496bdbd8c41016cc9b81ca9619e7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Description</sys_name>
+            <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
+            <sys_update_name>sys_documentation_var__m_sys_hub_action_input_5eef496bdbd8c41016cc9b81ca96191c_description_en</sys_update_name>
+            <sys_updated_by>dg42xyz</sys_updated_by>
+            <sys_updated_on>2019-10-11 00:02:01</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
