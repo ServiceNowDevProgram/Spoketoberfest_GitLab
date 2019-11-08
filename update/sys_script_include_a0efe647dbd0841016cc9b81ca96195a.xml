@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_gitlab.GitLabUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GitLabUtils</name>
+        <script><![CDATA[var GitLabUtils = Class.create();
+GitLabUtils.prototype = {
+	
+    initialize: function() {
+		this.ErrorHandler = new x_snc_gitlab.GitLabErrorHandler();
+	},
+	
+	/*
+	* Generic post-processing script for after REST steps.  This will always map the status code
+	* to the outputs, and will invoke either the callback function or the generic error handler
+	* depending on if a successful status code was returned.  The following parameters are 
+	* accepted:
+	*   - inputs: the inputs object from the REST step
+	*   - outputs: the outputs object to return to the next step
+	*   - errorMessages: an object mapping input errors (keys) to outbound error messages (values)
+	*   - successStatusCodes: an array of possible successful status codes
+	*   - callbackFunction: the function to run if a successful status code is found; use this
+	*   -                   function to map any custom fields to the output
+	*/
+	postProcess: function(inputs, outputs, errorMessages, successStatusCodes, callbackFunction) {
+		// map the status code
+		outputs.status = inputs.statusCode;
+		// check if a successful status code was returned
+		if (successStatusCodes.indexOf(inputs.statusCode.toString()) > -1) {
+			// successful return code - invoke the callback function
+			outputs = callbackFunction.call(this, inputs, outputs, errorMessages);
+		} else {
+			// unsuccessful return code - invoke the error handler
+			inputs.errorMessage = inputs.responseBody;
+			outputs = this.ErrorHandler.handleError(inputs, outputs, errorMessages);
+		}
+		// return the outputs
+		return outputs;
+	},
+
+    type: 'GitLabUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>dg42xyz</sys_created_by>
+        <sys_created_on>2019-10-09 17:58:13</sys_created_on>
+        <sys_id>a0efe647dbd0841016cc9b81ca96195a</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>GitLabUtils</sys_name>
+        <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
+        <sys_update_name>sys_script_include_a0efe647dbd0841016cc9b81ca96195a</sys_update_name>
+        <sys_updated_by>dg42xyz</sys_updated_by>
+        <sys_updated_on>2019-10-11 00:14:40</sys_updated_on>
+    </sys_script_include>
+</record_update>

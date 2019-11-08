@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity_profile">
+    <oauth_entity_profile action="INSERT_OR_UPDATE">
+        <default>true</default>
+        <grant_type>authorization_code</grant_type>
+        <jwt_provider/>
+        <name>GitLab default_profile</name>
+        <oauth_entity display_value="GitLab">b315e96ddb54001016cc9b81ca96191a</oauth_entity>
+        <sys_class_name>oauth_entity_profile</sys_class_name>
+        <sys_created_by>dg42xyz</sys_created_by>
+        <sys_created_on>2019-10-04 20:29:07</sys_created_on>
+        <sys_id>c5a52d6ddb54001016cc9b81ca961962</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>GitLab default_profile</sys_name>
+        <sys_package display_value="GitLab Spoke" source="x_snc_gitlab">ab39d459db98cc1064dcf5861d961971</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GitLab Spoke">ab39d459db98cc1064dcf5861d961971</sys_scope>
+        <sys_update_name>oauth_entity_profile_c5a52d6ddb54001016cc9b81ca961962</sys_update_name>
+        <sys_updated_by>dg42xyz</sys_updated_by>
+        <sys_updated_on>2019-10-04 20:47:50</sys_updated_on>
+    </oauth_entity_profile>
+</record_update>
